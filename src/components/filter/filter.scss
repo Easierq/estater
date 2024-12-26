@@ -1,0 +1,153 @@
+@import "../../responsive.scss";
+
+.filter {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+
+    h1 {
+        font-weight: 300;
+        font-size: 24px;
+    }
+
+    .item {
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+
+        label {
+            font-weight: 500;
+            font-size: 12px;
+        }
+
+        .search-input,
+        select {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            border: none;
+            outline: none;
+            background-color: rgba(138, 138, 138, 0.158);
+            margin-top: 8px;
+
+            &::-webkit-input-placeholder {
+                color: gray;
+                font-weight: 700;
+                font-size: 14px;
+            }
+        }
+    }
+
+    .top {
+        input {
+            width: 100%;
+        }
+    }
+
+    .filter-submit {
+        display: none;
+
+        @include sm {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .filter-button {
+            display: none;
+            align-items: center;
+            column-gap: 5px;
+            padding: 5px 14px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            background-color: $primary;
+            background-color: white;
+            border: 2px solid $primary;
+            color: white;
+            color: $primary;
+
+            &:hover {
+                opacity: 0.9;
+            }
+
+            @include sm {
+                display: flex;
+                gap: 10px;
+            }
+
+            .filter {
+                width: 18px;
+                margin-bottom: 1px;
+            }
+        }
+
+        .submit-button {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: max-content;
+            padding: 5px 12px;
+            border-radius: 5px;
+            font-size: 14px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            background-color: $primary;
+            color: white;
+
+            &:hover {
+                opacity: 0.9;
+            }
+
+            @include sm {
+                display: flex;
+            }
+        }
+    }
+
+    .bottom {
+        display: flex;
+        align-items: flex-end;
+        gap: 10px;
+        width: 100%;
+        margin-bottom: 10px;
+
+        @include sm {
+            display: none;
+        }
+
+        .item {
+            flex: 1;
+
+            input,
+            select {
+                width: 100%;
+                padding: 12px;
+                border-radius: 5px;
+                border: none;
+                outline: none;
+                background-color: rgba(138, 138, 138, 0.158);
+                margin-top: 8px;
+            }
+        }
+
+        button {
+            width: 100px;
+            padding: 12px;
+            border-radius: 5px;
+            font-size: 12px;
+            font-weight: 700;
+            border: none;
+            cursor: pointer;
+            background-color: $primary;
+            color: white;
+
+            &:hover {
+                opacity: 0.9;
+            }
+        }
+    }
+}

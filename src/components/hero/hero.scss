@@ -1,0 +1,90 @@
+@import "../../responsive.scss";
+
+.hero-wrapper {
+    background:
+        radial-gradient(circle at 50% 0,
+            rgba(255, 0, 0, 0.5),
+            rgba(255, 0, 0, 0) 70.71%),
+        radial-gradient(circle at 6.7% 75%,
+            rgba(0, 0, 255, 0.5),
+            rgba(0, 0, 255, 0) 70.71%),
+        radial-gradient(circle at 93.3% 75%,
+            rgba(0, 255, 0, 0.5),
+            rgba(0, 255, 0, 0) 70.71%) beige;
+
+    .hero {
+        width: 100%;
+        height: max-content;
+        height: 540px;
+        padding: 100px 7%;
+        padding-top: 200px;
+        background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+            url(/bg.jpg);
+        background-position: center;
+        background-size: cover;
+
+        @include sm {
+            height: 540px;
+        }
+
+        .hero-container {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            .textContainer {
+                .wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    gap: 16px;
+                    height: 100%;
+                    max-width: 960px;
+
+                    @include lg {
+                        padding-right: 50px;
+                    }
+
+                    @include md {
+                        padding: 0;
+                    }
+
+                    @include sm {
+                        justify-content: flex-start;
+                    }
+
+                    .title {
+                        font-size: 36px;
+                        font-weight: 700;
+                        text-align: center;
+                        // text-shadow:
+                        //     #7c4dff 3px 0;
+                        color: white;
+
+                        @include sm {
+                            font-size: 28px;
+                        }
+                    }
+
+                    .subtitle {
+                        font-size: 20px;
+                        font-weight: 500;
+                        line-height: 30px;
+                        text-align: center;
+                        color: white;
+                        max-width: 400px;
+                        margin-inline: auto;
+
+                        @include sm {
+                            font-size: 16px;
+                            display: none;
+                        }
+                    }
+
+                }
+            }
+
+        }
+    }
+}

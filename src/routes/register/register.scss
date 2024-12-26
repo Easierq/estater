@@ -1,0 +1,130 @@
+@import "../../responsive.scss";
+
+.register-page {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh - 60px);
+    padding-top: 120px;
+
+    @include sm {
+        padding: 30px 4%;
+        padding-top: 120px;
+    }
+
+    .register-container {
+
+        .wrapper {
+            width: 360px;
+            height: auto;
+            padding: 30px 10%;
+            border: 1px solid rgb(233, 233, 233);
+            border-radius: 5px;
+
+            @include sm {
+                width: 280px;
+                padding: 30px 6%;
+            }
+
+            .header {
+                margin-bottom: 20px;
+
+                h1 {
+                    font-size: 24px;
+                    font-weight: 500;
+                    margin-bottom: 8px;
+                }
+
+                p {
+                    font-size: 12px;
+                    font-weight: 500;
+                    margin-bottom: 8px;
+                }
+            }
+
+            .forms {
+                label {
+                    display: block;
+                    font-size: 12px;
+                    font-weight: 500;
+                }
+
+                .input-one {
+                    width: 100%;
+                    background-color: rgba(224, 224, 224, 0.39);
+                    border: none;
+                    border-radius: 5px;
+                    padding: 7px 15px;
+                    font-size: 16px;
+                    line-height: 20px;
+                    outline: none;
+                    margin-top: 4px;
+                    margin-bottom: 20px;
+
+                    &::-webkit-input-placeholder {
+                        color: rgb(148, 148, 148);
+                        font-weight: 500;
+                        font-size: 12px;
+                    }
+                }
+
+                .input-two {
+                    width: 100%;
+                    background-color: rgba(224, 224, 224, 0.39);
+                    border-radius: 5px;
+                    border: none;
+                    padding: 7px 15px;
+                    font-size: 16px;
+                    line-height: 20px;
+                    margin-top: 4px;
+                    margin-bottom: 12px;
+                    outline: none;
+
+                    &::-webkit-input-placeholder {
+                        color: rgb(148, 148, 148);
+                        font-weight: 500;
+                        font-size: 12px;
+                    }
+                }
+            }
+
+            a {
+                p {
+                    font-size: 11px;
+                    font-weight: 600;
+                    color: $primary;
+                    text-align: center;
+                    margin-bottom: 4px;
+                }
+            }
+
+            button {
+                padding: 8px 24px;
+                font-size: 11px;
+                font-weight: 600;
+                background-color: $primary;
+                color: white;
+                cursor: pointer;
+                border: none;
+                border-radius: 3px;
+                margin-bottom: 10px;
+
+                &:hover {
+                    opacity: 0.9;
+                }
+            }
+
+            .no-account {
+                text-align: center;
+                font-size: 11px;
+                font-weight: 700;
+
+                a {
+                    color: $primary;
+                }
+            }
+        }
+    }
+}

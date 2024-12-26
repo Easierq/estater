@@ -1,0 +1,11 @@
+@import "../../responsive.scss";
+
+.list {
+    width: 100%;
+    display: grid;
+    gap: 16px;
+    // grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
