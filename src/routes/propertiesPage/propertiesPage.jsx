@@ -26,28 +26,28 @@ const Sk = () => {
 
 const PropertiesPage = () => {
   const data = useLoaderData();
-  // console.log(data);
   return (
     <div className="xproperties">
       <div className="listContainer">
         <div className="px-wrapper">
           <Filter />
           <Suspense fallback={<Sk />}>
-            <Await
-              resolve={data.postResponse}
-              errorElement={<p>Error loading posts!</p>}
-            >
-              {/* {featuredPortfolio.map((item) => (
+            <div className="container">
+              <Await
+                resolve={data.postResponse}
+                errorElement={<p>Error loading posts!</p>}
+              >
+                {/* {featuredPortfolio.map((item) => (
                   <CardGrid item={item} key={item.id} />
                 ))} */}
-              <div className="container">
+                {/* <div className="container"> */}
                 {(postResponse) =>
                   postResponse.data.map((post) => (
                     <CardGrid key={post.id} item={post} />
                   ))
                 }
-              </div>
-            </Await>
+              </Await>
+            </div>
           </Suspense>
           {/* <Suspense fallback={<p>Loading...</p>}>
             <Await
