@@ -8,6 +8,7 @@ const Saved = () => {
   return (
     <div className="saved">
       <p className="p">Saved Properties</p>
+      <p className="p2">My saved properties</p>
       <div className="saved-listing">
         <div className="list-save">
           {featuredPortfolio.map((item) => (

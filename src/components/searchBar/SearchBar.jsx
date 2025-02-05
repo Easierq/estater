@@ -44,7 +44,7 @@ function SearchBar() {
         />
         <Link
           as={NavLink}
-          to={`/list?type=${query.type}&city=${query.city}&minPrice=${query.minPrice}&maxPrice=${query.maxPrice}`}
+          to={`/properties?type=${query.type}&city=${query.city}`}
         >
           <button>
             <img src="/search.png" alt="" />

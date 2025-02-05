@@ -106,7 +106,7 @@ function Filter() {
               defaultValue={query.maxPrice}
             />
           </div>
-          <button onClick={() => {}}>Search</button>
+          <button onClick={handleFilter}>Search</button>
         </div>
         <p>
           Search results for <b>{searchParams.get("city")}</b>

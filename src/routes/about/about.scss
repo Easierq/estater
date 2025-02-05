@@ -16,6 +16,7 @@
 
         h2 {
             font-weight: 500;
+            font-size: 30px;
             margin-bottom: 20px;
 
             @include sm {
@@ -25,8 +26,9 @@
         }
 
         .about-p {
-            font-size: 13px;
-            margin-bottom: 30px;
+            font-size: 15px;
+            font-weight: 400;
+            margin-bottom: 20px;
             line-height: 2;
 
             @include sm {

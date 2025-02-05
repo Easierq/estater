@@ -10,7 +10,7 @@ const Contact = () => {
         <div className="wrapper">
           <div className="header">
             <h1>Contact us</h1>
-            <p>Enter the content of your message</p>
+            {/* <p>Enter the content of your message</p> */}
           </div>
           <div className="forms">
             <label htmlFor="">Message</label>

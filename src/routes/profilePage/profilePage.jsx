@@ -1,18 +1,19 @@
-import { Link, NavLink } from "react-router-dom";
-import Chat from "../../components/chat/Chat";
-import List from "../../components/list/List";
 import "./profilePage.scss";
+
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import List from "../../components/list/List";
+import { useEffect, useState } from "react";
 // import apiRequest from "../../lib/apiRequest";
 // import { Await, Link, useLoaderData, useNavigate } from "react-router-dom";
 // import { Suspense, useContext } from "react";
 // import { AuthContext } from "../../context/AuthContext";
 
 function ProfilePage() {
+  const [userData, setUserData] = useState(null);
+
   // const data = useLoaderData();
 
-  // const { updateUser, currentUser } = useContext(AuthContext);
-
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
 
   // const handleLogout = async () => {
   //   try {
@@ -24,27 +25,42 @@ function ProfilePage() {
   //   }
   // };
 
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) setUserData(JSON.parse(user));
+  }, []);
+
+  const handleLogout = async () => {
+    localStorage.removeItem("user");
+
+    navigate("/");
+    window.location.reload();
+  };
+
   return (
     <div className="profilePage">
       <div className="details">
         <div className="wrapper">
-          <div className="title">
+          <h1 className="h1">Profile page</h1>
+          {/* <div className="title">
             <h1>User Information</h1>
-          </div>
+          </div> */}
           <div className="info">
             <div className="info-flex">
-              <img className="up-img" src="/nouser.jpg" alt="" />
+              <img
+                className="up-img"
+                src={userData?.avatar || "/nouser.jpg"}
+                alt=""
+              />
               <div className="name_email">
-                <span>
-                  Username: <b>Isiaq</b>
-                </span>
-                <span>
-                  Email: <b>Isiaq@gmail.com</b>
-                </span>
+                <p className="t">Username</p>
+                <p className="b">{userData?.username}</p>
+                <p className="t">Email</p>
+                <p className="b">{userData?.email}</p>
               </div>
             </div>
             <div className="update-buttons">
-              <button>Logout</button>
+              <button onClick={handleLogout}>Logout</button>
               <Link as={NavLink} to="/update-profile">
                 <button className="up-btn">Update Profile</button>
               </Link>

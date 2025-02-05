@@ -9,8 +9,16 @@
 
     .p {
         font-weight: 500;
-        font-size: 24px;
+        font-size: 22px;
         // margin-bottom: 20px;
+    }
+
+    .p2 {
+        font-weight: 400;
+        font-size: 14px;
+        color: rgb(58, 57, 57);
+
+        margin-bottom: 20px;
     }
 
     .saved-listing {
@@ -30,6 +38,7 @@
             gap: 16px;
             // grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
             margin-bottom: 20px;
             padding-top: 10px;
         }

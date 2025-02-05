@@ -64,13 +64,15 @@
             resize: none;
             padding: 0px 15px;
             padding-left: 20px;
-            font-size: 16px;
+            font-size: 15px;
+            font-weight: 700;
+            color: gray;
             height: auto;
 
             &::-webkit-input-placeholder {
                 color: gray;
                 font-weight: 700;
-                font-size: 14px;
+                font-size: 15px;
             }
         }
 

@@ -5,61 +5,62 @@
   display: grid;
   gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
 
+}
 
-  .cardsk {
-    position: relative;
-    margin-bottom: 10px;
-    height: 255px;
-    animation: skeleton 1s ease infinite alternate;
+.cardsk {
+  position: relative;
+  margin-bottom: 10px;
+  height: 255px;
+  animation: skeleton 1s ease infinite alternate;
 
-    @keyframes skeleton {
-      to {
-        opacity: 0.5;
-      }
+  @keyframes skeleton {
+    to {
+      opacity: 0.5;
     }
+  }
 
-    .cardsk-img {
+  .cardsk-img {
+    background-color: #cececea2;
+    height: 180px;
+    margin-bottom: 7px;
+    border-radius: 10px;
+  }
+
+  .cardsk-body {
+    padding: 7px 1px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    height: 186px;
+
+    .cardsk-price {
       background-color: #cececea2;
-      height: 180px;
-      margin-bottom: 7px;
-      border-radius: 10px;
+      width: 50%;
+      height: 16px;
+      border-radius: 3px;
+
     }
 
-    .cardsk-body {
-      padding: 7px 1px;
+    .cardsk-loc {
       display: flex;
-      flex-direction: column;
-      gap: 8px;
-      width: 100%;
-      height: 186px;
+      align-items: center;
+      gap: 5px;
 
-      .cardsk-price {
+      .cardsk-l-icon {
         background-color: #cececea2;
-        width: 50%;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+      }
+
+      .cardsk-l-text {
+        background-color: #cececea2;
+        width: 90%;
         height: 16px;
         border-radius: 3px;
-
-      }
-
-      .cardsk-loc {
-        display: flex;
-        align-items: center;
-        gap: 5px;
-
-        .cardsk-l-icon {
-          background-color: #cececea2;
-          width: 14px;
-          height: 14px;
-          border-radius: 50%;
-        }
-
-        .cardsk-l-text {
-          background-color: #cececea2;
-          width: 90%;
-          height: 16px;
-          border-radius: 3px;
-        }
       }
     }
   }

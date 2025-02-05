@@ -1,11 +1,11 @@
 import React from "react";
 import "./count.scss";
-import left from "../../icons/chevron_left.svg";
+import camera from "../../icons/camera.svg";
 
 const Count = () => {
   return (
     <div className="count">
-      <img src={left} alt="count" />
+      <img src={camera} alt="count" />
       <span>4</span>
     </div>
   );

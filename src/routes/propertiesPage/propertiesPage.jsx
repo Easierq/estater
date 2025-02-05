@@ -1,28 +1,54 @@
 import "./propertiesPage.scss";
 
 import React from "react";
-// import { Await, useLoaderData } from "react-router-dom";
-// import { Suspense } from "react";
+import { Await, useLoaderData } from "react-router-dom";
+import { Suspense } from "react";
 
 import { featuredPortfolio } from "../../../data";
-// import FilterModal from "../../components/filterModal/FilterModal";
 import CardGrid from "../../components/cardGrid/CardGrid";
 import Filter from "../../components/filter/Filter";
-import CardSkeleton from "../../components/cardSkeleton/CardSkeleton";
+import { CaSkeleton } from "../../components/cardSkeleton/CardSkeleton";
+
+const Sk = () => {
+  return (
+    <div className="containerk">
+      <CaSkeleton />
+      <CaSkeleton />
+      <CaSkeleton />
+      <CaSkeleton />
+      <CaSkeleton />
+      <CaSkeleton />
+      <CaSkeleton />
+      <CaSkeleton />
+    </div>
+  );
+};
 
 const PropertiesPage = () => {
+  const data = useLoaderData();
+  // console.log(data);
   return (
-    <div className="properties">
+    <div className="xproperties">
       <div className="listContainer">
-        <div className="p-wrapper">
+        <div className="px-wrapper">
           <Filter />
-
-          <div className="container">
-            {featuredPortfolio.map((item) => (
-              <CardGrid item={item} key={item.id} />
-            ))}
-          </div>
-          <CardSkeleton />
+          <Suspense fallback={<Sk />}>
+            <Await
+              resolve={data.postResponse}
+              errorElement={<p>Error loading posts!</p>}
+            >
+              {/* {featuredPortfolio.map((item) => (
+                  <CardGrid item={item} key={item.id} />
+                ))} */}
+              <div className="container">
+                {(postResponse) =>
+                  postResponse.data.map((post) => (
+                    <CardGrid key={post.id} item={post} />
+                  ))
+                }
+              </div>
+            </Await>
+          </Suspense>
           {/* <Suspense fallback={<p>Loading...</p>}>
             <Await
               resolve={data.postResponse}

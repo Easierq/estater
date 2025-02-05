@@ -1,5 +1,16 @@
 @import "../../responsive.scss";
 
+.containersk {
+    width: 100%;
+    display: grid;
+    gap: 16px;
+    // grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
+    margin-bottom: 20px;
+    padding-top: 10px;
+}
+
 .featured-container {
     display: flex;
     justify-content: center;
@@ -11,9 +22,12 @@
         padding: 30px 7%;
 
         h2 {
-            font-size: 20px;
+            font-size: 18px;
             font-weight: 600;
             text-align: center;
+            color: $primary;
+            font-family: "Inter";
+            margin-bottom: 5px;
         }
 
         .container {
@@ -22,6 +36,7 @@
             gap: 16px;
             // grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
             margin-bottom: 20px;
             padding-top: 10px;
         }

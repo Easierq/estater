@@ -14,11 +14,11 @@ const CardGrid = ({ item }) => {
   return (
     <div className="item" key={item.id}>
       <div className="ab12">
-        <div className="ab1">
+        {/* <div className="ab1">
           <span>Featured</span>
-        </div>
+        </div> */}
         <div className="ab2">
-          <span>3 Bedroom Flat</span>
+          <span>{item.property}</span>
         </div>
       </div>
       <div className="ab3">
@@ -42,9 +42,9 @@ const CardGrid = ({ item }) => {
             <img className="img" src={item.images[0]} alt={item.title} />
           </div>
           <div className="desc_title">
-            <p className="price">${formatPriceWithCommas(item.price)}</p>
             <p className="title">{item.title}</p>
-            <p className="desc">{item.desc}</p>
+            <p className="price">${formatPriceWithCommas(item.price)}</p>
+            {/* <p className="desc">{item.desc}</p> */}
           </div>
         </div>
       </Link>

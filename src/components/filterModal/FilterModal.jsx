@@ -2,10 +2,11 @@ import "./filterModal.scss";
 
 import React from "react";
 import { useState } from "react";
-import { useSearchParams } from "react-router-dom";
+import { useNavigate, useSearchParams } from "react-router-dom";
 import close from "../../icons/close-black.svg";
 
 const FilterModal = ({ open, setOpen }) => {
+  const navigate = useNavigate();
   const [searchParams, setSearchParams] = useSearchParams();
   const [query, setQuery] = useState({
     type: searchParams.get("type") || "",
@@ -25,6 +26,7 @@ const FilterModal = ({ open, setOpen }) => {
 
   const handleFilter = () => {
     setSearchParams(query);
+    setOpen(!open);
   };
   return (
     <div className="filter-modal">
@@ -44,6 +46,8 @@ const FilterModal = ({ open, setOpen }) => {
             id="city"
             name="city"
             placeholder="City Location"
+            onChange={handleChange}
+            defaultValue={query.city}
           />
         </div>
         <div className="price">
@@ -55,6 +59,8 @@ const FilterModal = ({ open, setOpen }) => {
               id="minPrice"
               name="min-price"
               placeholder="min-price"
+              onChange={handleChange}
+              defaultValue={query.minPrice}
             />
           </div>
           <div className="dash" />
@@ -65,13 +71,20 @@ const FilterModal = ({ open, setOpen }) => {
               id="max-price"
               name="maxPrice"
               placeholder="max-price"
+              onChange={handleChange}
+              defaultValue={query.maxPrice}
             />
           </div>
         </div>
         <div className="filter-box">
           <div className="item-input">
             <label htmlFor="type">Type</label>
-            <select name="type" id="type">
+            <select
+              name="type"
+              id="type"
+              onChange={handleChange}
+              defaultValue={query.type}
+            >
               <option value="">any</option>
               <option value="buy">Buy</option>
               <option value="rent">Rent</option>
@@ -80,7 +93,12 @@ const FilterModal = ({ open, setOpen }) => {
           {/* <div className="dash" /> */}
           <div className="item-input">
             <label htmlFor="type">Property</label>
-            <select name="property" id="property">
+            <select
+              name="property"
+              id="property"
+              onChange={handleChange}
+              defaultValue={query.property}
+            >
               <option value="">any</option>
               <option value="apartment">Apartment</option>
               <option value="house">House</option>
@@ -89,7 +107,9 @@ const FilterModal = ({ open, setOpen }) => {
             </select>
           </div>
         </div>
-        <button className="submit">Submit</button>
+        <button className="submit" onClick={handleFilter}>
+          Submit
+        </button>
       </div>
     </div>
   );

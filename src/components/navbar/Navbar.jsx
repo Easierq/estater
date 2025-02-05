@@ -5,14 +5,10 @@ import { Link, NavLink, useLocation, useNavigate } from "react-router-dom";
 import menu from "../../icons/menu.svg";
 import menuwhite from "../../icons/menu-white.svg";
 import close from "../../icons/close.svg";
-// import { ReactComponent as Menu } from "../../icons/menu.svg";
-
-// const Icon = () => {
-//   return <Menu className="menu-icon" />;
-// };
 
 function Navbar() {
   const [open, setOpen] = useState(false);
+  const [userData, setUserData] = useState(null);
   const [active, setActive] = useState(false);
 
   const { pathname } = useLocation();
@@ -28,11 +24,6 @@ function Navbar() {
     };
   }, []);
 
-  // const currentUser = { username: "isiaq", avatar: "" };
-  const currentUser = true;
-  const admin = true;
-  // const number = 4;
-
   if (open) {
     document.body.classList.add("active-modal");
   } else {
@@ -40,6 +31,12 @@ function Navbar() {
   }
 
   let sideBar = useRef();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user");
+    if (user) setUserData(JSON.parse(user));
+  }, []);
+  // console.log(userData);
 
   useEffect(() => {
     let handler = (e) => {
@@ -88,9 +85,9 @@ function Navbar() {
               className={active || pathname !== "/" ? "a active" : "a"}
               href="/saved"
             >
-              Saved
+              Bookmarks
             </a>
-            {admin && (
+            {userData?.isAdmin && (
               <div>
                 <Link
                   as={NavLink}
@@ -105,23 +102,35 @@ function Navbar() {
                 </Link>
               </div>
             )}
-            {currentUser ? (
+            {!userData && (
+              <div>
+                <Link
+                  as={NavLink}
+                  to="/login"
+                  className={
+                    active || pathname !== "/" ? "auth active" : "auth"
+                  }
+                >
+                  <span>Login</span>
+                </Link>
+              </div>
+            )}
+            {userData && (
               <div>
                 <Link as={NavLink} to="/profile" className="user">
                   <img src="/nouser.jpg" alt="" />
-                  <span>Wale</span>
+                  {/* <span>Wale</span> */}
                 </Link>
               </div>
-            ) : (
-              <>
-                <a href="/login" className="login-button">
-                  Login
-                </a>
-                <a href="/register" className="register-button">
-                  Register
-                </a>
-              </>
             )}
+            {/* <>
+              <a href="/login" className="login-button">
+                Login
+              </a>
+              <a href="/register" className="register-button">
+                Register
+              </a>
+            </> */}
           </div>
           <div className="menuIcon">
             {active || pathname !== "/" ? (
@@ -153,12 +162,16 @@ function Navbar() {
                 alt="menu-icon"
                 onClick={() => setOpen((prev) => !prev)}
               />
-              <a href="/">Home</a>
-              <a href="/about">About</a>
+              <a href="/">Properties</a>
+              <a href="/saved">Saved listing</a>
               <a href="/contact">Contact</a>
-              <a href="/register">Register</a>
-              <a href="/login">Login</a>
               <a href="/profile">Profile</a>
+              {userData && (
+                <>
+                  <a href="/register">Register</a>
+                  <a href="/login">Login</a>
+                </>
+              )}
             </div>
           </div>
         </div>

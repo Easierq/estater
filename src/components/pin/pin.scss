@@ -1,17 +1,35 @@
-.popupContainer{
+.popupContainer {
   display: flex;
-  gap: 20px;
+  gap: 10px;
 
-  img{
-    width: 64px;
-    height: 48px;
+  img {
+    // width: 20px;
+    // height: 20px;
     object-fit: cover;
-    border-radius: 5px;
+    margin-top: 5px;
   }
 
-  .textContainer{
+  .textContainer {
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    // justify-content: space-between;
+    gap: 1px;
+
+
+    a {
+      font-size: 12px;
+      font-weight: bold;
+      margin-bottom: -2px;
+    }
+
+    .span1 {
+      font-weight: 600;
+      font-size: 11px;
+    }
+
+    .span2 {
+      font-weight: 800;
+      font-size: 12px;
+    }
   }
 }

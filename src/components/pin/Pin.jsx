@@ -12,8 +12,8 @@ function Pin({ item }) {
             <Link as={NavLink} to={`/${item.id}`}>
               {item.title}
             </Link>
-            <span>{item.bedroom} bedroom</span>
-            <b>$ {item.price}</b>
+            <span className="span1">{item.bedroom} bedroom</span>
+            <span className="span2">$ {item.price}</span>
           </div>
         </div>
       </Popup>

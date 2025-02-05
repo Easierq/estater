@@ -16,6 +16,11 @@ import Saved from "./routes/saved/saved";
 import About from "./routes/about/about";
 import Error from "./routes/error/error";
 import ScrollToTop from "./ScrollToTop";
+import {
+  listPageLoader,
+  profilePageLoader,
+  singlePageLoader,
+} from "./lib/loader";
 
 const Layout = () => {
   return (
@@ -41,14 +46,17 @@ function App() {
         {
           path: "/properties",
           element: <PropertiesPage />,
+          loader: listPageLoader,
         },
         {
           path: "/properties/:id",
           element: <SinglePage />,
+          // loader: singlePageLoader,
         },
         {
           path: "/profile",
           element: <ProfilePage />,
+          loader: profilePageLoader,
         },
         {
           path: "/register",

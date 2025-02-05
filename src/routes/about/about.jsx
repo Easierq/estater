@@ -2,7 +2,7 @@ import "./about.scss";
 
 import React from "react";
 
-const name = "Paapi";
+const name = "Estater";
 
 const About = () => {
   return (

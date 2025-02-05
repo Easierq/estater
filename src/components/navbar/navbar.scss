@@ -10,6 +10,7 @@
     justify-content: center;
     position: fixed;
     top: 0;
+    font-family: "Inter";
 
     &.active {
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
@@ -39,7 +40,7 @@
         justify-content: space-between;
 
         @include sm {
-            padding: 0 7%;
+            padding: 0 4%;
         }
 
         .left {
@@ -96,6 +97,10 @@
                         color: black;
                         font-size: 13px;
                         font-weight: 600;
+
+                        &:hover {
+                            color: $primary;
+                        }
                     }
                 }
 
@@ -109,31 +114,53 @@
                     column-gap: 5px;
                     padding: 7px 14px;
                     background-color: transparent;
-                    border: 2px solid white;
+                    font-weight: 600;
+                    border: 3px solid white;
+                    // border: 2px solid $primary;
+                    color: white;
+                    // color: $primary;
+                    cursor: pointer;
+                    border-radius: 3px;
+                    min-width: max-content;
+
+                    &.active {
+                        border: 3px solid $primary;
+                        color: $primary;
+                    }
+                }
+
+                .auth {
+                    display: flex;
+                    align-items: center;
+                    column-gap: 5px;
+                    padding: 9px 14px;
+                    background-color: $primary;
+                    // border: 2px solid white;
                     color: white;
                     cursor: pointer;
                     border-radius: 3px;
+                    min-width: max-content;
 
                     &.active {
-                        border: 2px solid $primary;
-                        color: $primary;
+                        // border: 2px solid $primary;
+                        color: white;
                     }
                 }
 
                 .user {
                     display: flex;
                     align-items: center;
-                    column-gap: 5px;
-                    padding: 7px 14px;
-                    background-color: $primary;
-                    color: white;
-                    cursor: pointer;
-                    border: none;
-                    border-radius: 3px;
+                    // column-gap: 5px;
+                    // padding: 6px 14px;
+                    // color: white;
+                    // border: none;
+                    // cursor: pointer;
+                    // background-color: $primary;
+                    border-radius: 50%;
 
                     img {
-                        width: 24px;
-                        height: 24px;
+                        width: 30px;
+                        height: 30px;
                         border-radius: 50%;
                         background-color: $primary;
                         object-fit: cover;

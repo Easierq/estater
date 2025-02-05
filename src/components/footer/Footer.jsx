@@ -20,7 +20,7 @@ const Footer = () => {
           </a>
         </div>
         <p className="big-screen">
-          &copy; {new Date().getFullYear()} <span id="date"></span> GKIT. All
+          &copy; {new Date().getFullYear()} <span id="date"></span> Estater. All
           rights reserved
         </p>
         <p className="small-screen">

@@ -2,6 +2,7 @@
     position: absolute;
     display: flex;
     align-items: center;
+    justify-items: center;
     bottom: 10px;
     right: 10px;
     // width: 40px;
@@ -11,12 +12,13 @@
     background-color: rgba(0, 0, 0, 0.904);
 
     img {
-        width: 20px;
-        height: 20px;
+        width: 16px;
+        height: 16px;
+        margin-right: 5px;
     }
 
     span {
-        font-size: 10px;
+        font-size: 12px;
         color: white;
     }
 }
