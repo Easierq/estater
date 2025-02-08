@@ -282,7 +282,10 @@
                     row-gap: 30px;
                     padding-left: 30px;
                     padding-top: 70px;
-                    font-size: 20px;
+
+                    a {
+                        font-size: 20px;
+                    }
 
                     .close {
                         position: absolute;

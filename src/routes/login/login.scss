@@ -47,8 +47,9 @@
             .forms {
                 label {
                     display: block;
-                    font-size: 12px;
+                    font-size: 13px;
                     font-weight: 500;
+                    color: $primary;
                 }
 
                 .input-one {
@@ -57,7 +58,8 @@
                     border: none;
                     border-radius: 5px;
                     padding: 7px 15px;
-                    font-size: 16px;
+                    font-size: 15px;
+                    font-weight: 500;
                     line-height: 20px;
                     outline: none;
                     margin-top: 4px;
@@ -66,7 +68,7 @@
                     &::-webkit-input-placeholder {
                         color: rgb(148, 148, 148);
                         font-weight: 500;
-                        font-size: 12px;
+                        font-size: 15px;
                     }
                 }
 
@@ -76,7 +78,8 @@
                     border-radius: 5px;
                     border: none;
                     padding: 7px 15px;
-                    font-size: 16px;
+                    font-size: 15px;
+                    font-weight: 500;
                     line-height: 20px;
                     margin-top: 4px;
                     margin-bottom: 12px;
@@ -85,7 +88,7 @@
                     &::-webkit-input-placeholder {
                         color: rgb(148, 148, 148);
                         font-weight: 500;
-                        font-size: 12px;
+                        font-size: 15px;
                     }
                 }
             }
@@ -102,7 +105,7 @@
 
             button {
                 padding: 10px 24px;
-                font-size: 11px;
+                font-size: 14px;
                 font-weight: 600;
                 background-color: $primary;
                 color: white;

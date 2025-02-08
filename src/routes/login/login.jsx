@@ -52,7 +52,7 @@ const Login = () => {
             <p>Enter your email below to login to your account</p>
           </div>
           <form className="forms" onSubmit={handleSubmit}>
-            <label htmlFor="username">username</label>
+            <label htmlFor="username">Username</label>
             <input
               className="input-one"
               placeholder="Enter your username"
