@@ -163,10 +163,10 @@ function Navbar() {
                 onClick={() => setOpen((prev) => !prev)}
               />
               <a href="/">Properties</a>
+              <a href="/profile">Profile</a>
               <a href="/saved">Saved listing</a>
               <a href="/contact">Contact</a>
-              <a href="/profile">Profile</a>
-              {userData && (
+              {!userData && (
                 <>
                   <a href="/register">Register</a>
                   <a href="/login">Login</a>

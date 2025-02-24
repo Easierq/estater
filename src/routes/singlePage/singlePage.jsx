@@ -80,7 +80,7 @@ const SinglePage = () => {
         <>
           <div className="title-wrap">
             <div className="top-title">
-              <h3>{post.title}</h3>
+              <h3>{post?.title}</h3>
             </div>
           </div>
           <div className="single">
@@ -92,26 +92,30 @@ const SinglePage = () => {
                 <div className="single-container">
                   <div className="details">
                     <div className="wrapper">
-                      <Slider images={post.images} />
+                      {post?.images && <Slider images={post?.images} />}
                       <p>Click on any picture to view in fullscreen</p>
                       <div className="info">
                         <div className="top">
                           <div className="post">
-                            <h3>{post.title}</h3>
+                            <h3>{post?.title}</h3>
                             <div className="address">
                               <img src={location} alt="" />
-                              <span>{post.address}</span>
+                              <span>{post?.address}</span>
                             </div>
+                            <div className="desc">
+                              <span>{post?.postDetail?.desc}</span>
+                            </div>
+
                             <div className="price">
                               $ {formatPriceWithCommas(post.price)}
                             </div>
                           </div>
                           <div className="user">
-                            <img src={post.user.avatar} alt="" />
-                            <span>{post.user.username}</span>
+                            <img src={post?.user?.avatar} alt="" />
+                            <span>{post?.user?.username}</span>
                           </div>
                         </div>
-                        <p className="desc">{post.desc}</p>
+                        <p className="desc">{post?.desc}</p>
                       </div>
                     </div>
                   </div>
@@ -121,20 +125,23 @@ const SinglePage = () => {
                       <div className="sizes">
                         <div className="size">
                           <img src={sqfoot} alt="" />
-                          <span>{post.postDetail.size} sqft</span>
+                          <span>{post?.postDetail?.size} sqft</span>
                         </div>
                         <div className="size">
                           <img src={bed} alt="" />
-                          <span>{post.bedroom} bedrooms</span>
+                          <span>{post?.bedroom} bedrooms</span>
                         </div>
                         <div className="size">
                           <img src={bathroom} alt="" />
-                          <span>{post.bathroom} bathroom</span>
+                          <span>{post?.bathroom} bathroom</span>
                         </div>
                       </div>
                       <div className="user">
-                        <img src={post.user.avatar} alt="" />
-                        <span>{post.user.username}</span>
+                        <img src={post?.user?.avatar} alt="" />
+                        <span>
+                          Posted by {""}
+                          {post?.user?.username}
+                        </span>
                       </div>
                       <div className="buttons">
                         <button>

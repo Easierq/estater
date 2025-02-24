@@ -66,9 +66,9 @@ function ProfilePage() {
               </Link>
             </div>
           </div>
-          <div className="mylist">
+          {/* <div className="mylist">
             <h1>My List</h1>
-          </div>
+          </div> */}
           {/* <Suspense fallback={<p>Loading...</p>}>
             <Await
               resolve={data.postResponse}
@@ -77,7 +77,7 @@ function ProfilePage() {
               {(postResponse) => <List posts={postResponse.data.userPosts} />}
             </Await>
           </Suspense> */}
-          <List />
+          {/* <List /> */}
           {/* <Suspense fallback={<p>Loading...</p>}>
             <Await
               resolve={data.postResponse}

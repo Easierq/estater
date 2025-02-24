@@ -13,7 +13,7 @@ const Contact = () => {
             {/* <p>Enter the content of your message</p> */}
           </div>
           <div className="forms">
-            <label htmlFor="">Message</label>
+            <label htmlFor="">Your Message</label>
             <textarea
               cols="0"
               rows="10"

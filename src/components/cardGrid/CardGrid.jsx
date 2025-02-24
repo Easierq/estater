@@ -21,7 +21,7 @@ const CardGrid = ({ item }) => {
           <span>{item.property}</span>
         </div>
       </div>
-      <div className="ab3">
+      {/* <div className="ab3">
         {mark && (
           <img
             src={bookmarkfill}
@@ -32,7 +32,7 @@ const CardGrid = ({ item }) => {
         {!mark && (
           <img src={bookmark} alt="menu-icon" onClick={() => setMark(true)} />
         )}
-      </div>
+      </div> */}
       <Link as={NavLink} to={`/properties/${item.id}`}>
         <div className="pic">
           <img src={item.images[0]} alt={item.title} />

@@ -47,8 +47,8 @@
                 label {
                     display: block;
                     font-size: 12px;
-                    font-weight: 500;
-                    color: rgb(122, 121, 121);
+                    font-weight: 400;
+                    color: $primary;
                 }
 
                 textarea {
@@ -56,8 +56,8 @@
                     resize: none;
                     font-family: "Poppins";
                     background-color: transparent;
-                    border: 1px solid rgb(233, 233, 233);
-                    background-color: rgba(224, 224, 224, 0.39);
+                    border: 2px solid rgb(233, 233, 233);
+                    border: 1px solid $primary;
                     border-radius: 5px;
                     padding: 7px 15px;
                     font-size: 16px;

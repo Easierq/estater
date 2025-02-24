@@ -31,7 +31,7 @@ const Register = () => {
       console.log("okayyy");
       navigate("/login");
     } catch (err) {
-      setError(err.response?.data?.message);
+      setError("error detected");
     } finally {
       setIsLoading(false);
     }

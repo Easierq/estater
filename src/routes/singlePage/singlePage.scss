@@ -104,13 +104,18 @@
                                 align-items: center;
                                 color: $primary;
                                 font-size: 12px;
-                                width: 70%;
+                                width: 90%;
                                 font-weight: 700;
 
                                 img {
                                     // width: 16px;
                                     height: 16px;
                                 }
+                            }
+
+                            .desc {
+                                width: 90%;
+                                font-size: 14px;
                             }
 
                             .price {

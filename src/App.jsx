@@ -52,6 +52,7 @@ function App() {
           path: "/properties/:id",
           element: <SinglePage />,
           // loader: singlePageLoader,
+          errorElement: <Error />,
         },
         {
           path: "/profile",

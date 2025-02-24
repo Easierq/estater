@@ -57,7 +57,7 @@ function Slider({ images }) {
         </div>
       )}
       <div className="bigImage">
-        <Count />
+        <Count images={images} />
         <img src={images[0]} alt="" onClick={() => setImageIndex(0)} />
       </div>
       <div className="smallImages">

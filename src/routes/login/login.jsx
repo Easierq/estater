@@ -36,7 +36,7 @@ const Login = () => {
       navigate("/");
       window.location.reload();
     } catch (err) {
-      console.log("not okay login");
+      console.log(err);
 
       setError(err.response.data.message);
     } finally {

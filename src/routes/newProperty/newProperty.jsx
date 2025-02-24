@@ -210,7 +210,7 @@ function NewProperty() {
                   </select>
                 </div>
               </div>
-              <div className="item-con">
+              {/* <div className="item-con">
                 <div className="item">
                   <label htmlFor="income">Income Pol.</label>
                   <input
@@ -240,12 +240,12 @@ function NewProperty() {
                     type="number"
                   />
                 </div>
-              </div>
+              </div> */}
               <div className="imagesContainer">
                 <h1>Property Images</h1>
                 <div className="image-con">
                   {images.map((image, index) => (
-                    <div className="img">
+                    <div className="img" key={index}>
                       <img src={image} key={index} alt="" />
                     </div>
                   ))}
@@ -297,7 +297,7 @@ function NewProperty() {
             <p>Add Images</p>
             <div className="image-con">
               {images?.map((image, index) => (
-                <div className="img">
+                <div className="img" key={index}>
                   <img src={image} key={index} alt="" />
                 </div>
               ))}

@@ -4,7 +4,6 @@ import React from "react";
 import { Await, useLoaderData } from "react-router-dom";
 import { Suspense } from "react";
 
-import { featuredPortfolio } from "../../../data";
 import CardGrid from "../../components/cardGrid/CardGrid";
 import Filter from "../../components/filter/Filter";
 import { CaSkeleton } from "../../components/cardSkeleton/CardSkeleton";
@@ -31,15 +30,13 @@ const PropertiesPage = () => {
       <div className="listContainer">
         <div className="px-wrapper">
           <Filter />
+          {/* {true && <p className="error-load">error</p>} */}
           <Suspense fallback={<Sk />}>
             <div className="container">
               <Await
                 resolve={data.postResponse}
-                errorElement={<p>Error loading posts!</p>}
+                errorElement={<p className="error-load"></p>}
               >
-                {/* {featuredPortfolio.map((item) => (
-                  <CardGrid item={item} key={item.id} />
-                ))} */}
                 {/* <div className="container"> */}
                 {(postResponse) =>
                   postResponse.data.map((post) => (

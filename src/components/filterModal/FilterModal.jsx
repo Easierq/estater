@@ -5,26 +5,33 @@ import { useState } from "react";
 import { useNavigate, useSearchParams } from "react-router-dom";
 import close from "../../icons/close-black.svg";
 
-const FilterModal = ({ open, setOpen }) => {
-  const navigate = useNavigate();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const [query, setQuery] = useState({
-    type: searchParams.get("type") || "",
-    city: searchParams.get("city") || "",
-    property: searchParams.get("property") || "",
-    minPrice: searchParams.get("minPrice") || "",
-    maxPrice: searchParams.get("maxPrice") || "",
-    bedroom: searchParams.get("bedroom") || "",
-  });
+const FilterModal = ({
+  open,
+  setOpen,
+  searchParams,
+  setSearchParams,
+  query,
+  setQuery,
+}) => {
+  // const navigate = useNavigate();
+  // const [searchParams, setSearchParams] = useSearchParams();
+  // const [query, setQuery] = useState({
+  //   type: searchParams.get("type") || "",
+  //   city: searchParams.get("city") || "",
+  //   property: searchParams.get("property") || "",
+  //   minPrice: searchParams.get("minPrice") || "",
+  //   maxPrice: searchParams.get("maxPrice") || "",
+  //   bedroom: searchParams.get("bedroom") || "",
+  // });
 
-  const handleChange = (e) => {
+  const handleChanger = (e) => {
     setQuery({
       ...query,
       [e.target.name]: e.target.value,
     });
   };
 
-  const handleFilter = () => {
+  const handleFilterr = () => {
     setSearchParams(query);
     setOpen(!open);
   };
@@ -46,7 +53,7 @@ const FilterModal = ({ open, setOpen }) => {
             id="city"
             name="city"
             placeholder="City Location"
-            onChange={handleChange}
+            onChange={handleChanger}
             defaultValue={query.city}
           />
         </div>
@@ -59,7 +66,7 @@ const FilterModal = ({ open, setOpen }) => {
               id="minPrice"
               name="min-price"
               placeholder="min-price"
-              onChange={handleChange}
+              onChange={handleChanger}
               defaultValue={query.minPrice}
             />
           </div>
@@ -71,7 +78,7 @@ const FilterModal = ({ open, setOpen }) => {
               id="max-price"
               name="maxPrice"
               placeholder="max-price"
-              onChange={handleChange}
+              onChange={handleChanger}
               defaultValue={query.maxPrice}
             />
           </div>
@@ -82,7 +89,7 @@ const FilterModal = ({ open, setOpen }) => {
             <select
               name="type"
               id="type"
-              onChange={handleChange}
+              onChange={handleChanger}
               defaultValue={query.type}
             >
               <option value="">any</option>
@@ -96,7 +103,7 @@ const FilterModal = ({ open, setOpen }) => {
             <select
               name="property"
               id="property"
-              onChange={handleChange}
+              onChange={handleChanger}
               defaultValue={query.property}
             >
               <option value="">any</option>
@@ -107,7 +114,7 @@ const FilterModal = ({ open, setOpen }) => {
             </select>
           </div>
         </div>
-        <button className="submit" onClick={handleFilter}>
+        <button className="submit" onClick={handleFilterr}>
           Submit
         </button>
       </div>

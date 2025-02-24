@@ -37,6 +37,16 @@
             width: 100%;
             height: 100%;
 
+            .error-load {
+                // left: 50%;
+                // bottom: 50%;
+                // transform: translate(-50%, -50%);
+                text-align: center;
+                font-size: 30px;
+                text-align: center;
+                font-weight: 500;
+            }
+
             .container {
                 width: 100%;
                 display: grid;
@@ -45,7 +55,16 @@
                 grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
                 grid-template-columns: repeat(auto-fill, minmax(min(240px, 100%), 1fr));
                 margin-bottom: 20px;
-                // padding-top: 10px;
+
+                // .error-load {
+                //     // left: 50%;
+                //     // bottom: 50%;
+                //     // transform: translate(-50%, -50%);
+                //     text-align: center;
+                //     font-size: 30px;
+                //     text-align: center;
+                //     font-weight: 500;
+                // }
             }
         }
     }

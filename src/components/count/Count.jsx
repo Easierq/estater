@@ -2,11 +2,11 @@ import React from "react";
 import "./count.scss";
 import camera from "../../icons/camera.svg";
 
-const Count = () => {
+const Count = ({ images }) => {
   return (
     <div className="count">
       <img src={camera} alt="count" />
-      <span>4</span>
+      <span>{images?.length}</span>
     </div>
   );
 };
