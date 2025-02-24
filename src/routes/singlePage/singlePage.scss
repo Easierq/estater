@@ -19,10 +19,15 @@
 
         @include sm {
             width: 100%;
+            padding-top: 50px;
         }
 
         h3 {
             font-weight: 500;
+
+            @include sm {
+                font-size: 18px;
+            }
         }
     }
 
@@ -55,6 +60,7 @@
         @include sm {
             flex-direction: column;
             overflow: scroll;
+            padding: 0 4%;
         }
 
         .details {
