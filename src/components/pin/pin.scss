@@ -1,24 +1,26 @@
 .popupContainer {
-  display: flex;
-  gap: 10px;
+  // display: flex;
+  // gap: 10px;
+  height: auto;
 
   img {
     // width: 20px;
     // height: 20px;
     object-fit: cover;
     margin-top: 5px;
+    flex: 1;
   }
 
   .textContainer {
     display: flex;
     flex-direction: column;
-    // justify-content: space-between;
     gap: 1px;
-
+    // flex: 3;
+    // justify-content: space-between;
 
     a {
       font-size: 12px;
-      font-weight: bold;
+      font-weight: 800;
       margin-bottom: -2px;
     }
 

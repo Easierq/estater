@@ -19,7 +19,6 @@
 
         @include sm {
             width: 100%;
-            padding-top: 50px;
         }
 
         h3 {
@@ -61,6 +60,7 @@
             flex-direction: column;
             overflow: scroll;
             padding: 0 4%;
+            gap: 20px;
         }
 
         .details {
