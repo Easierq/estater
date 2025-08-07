@@ -16,7 +16,7 @@
     .hero {
         width: 100%;
         height: max-content;
-        height: 540px;
+        height: 500px;
         padding: 100px 7%;
         // padding-top: 200px;
         background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
@@ -25,7 +25,7 @@
         background-size: cover;
 
         @include sm {
-            height: 540px;
+            height: 500px;
         }
 
         .hero-container {

@@ -151,9 +151,9 @@ const SinglePage = () => {
                         </button>
                         <button>Save</button>
                       </div>
-                      <div className="mapContainer">
+                      {/* <div className="mapContainer">
                         <Map items={[post]} />
-                      </div>
+                      </div> */}
                       <p className="title">General guide</p>
                       <div className="disclaimer-con">
                         <p className="disclaimer-text">
